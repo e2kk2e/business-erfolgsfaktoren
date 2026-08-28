@@ -1,13 +1,57 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updated_at": "2026-08-28",
+  "public_repo_policy": "Raw exports and bulky provenance archives are not mirrored automatically into the public repository. Canonical external evidence is tracked by URL in data/claims.json.",
   "sources": [
-    {"path":"sources/verified/deep-research-report.md","status":"research_basis","default_grade":"B","notes":"Neuere Deep-Research-Synthese; einzelne Claims weiterhin anhand ihrer Originalquelle bewerten."},
-    {"path":"sources/verified/startup-erfolgsfaktoren_lean-wachstum-ki.md","status":"research_basis","default_grade":"B","notes":"Umfangreiche Startup-Analyse; ältere Werte können zeitlich veraltet sein."},
-    {"path":"sources/unverified/20-realistische-businessplaene.md","status":"idea_archive","default_grade":"D","notes":"Ideen-/Scoring-Archiv, keine belastbare Marktevidenz ohne externe Verifikation."},
-    {"path":"sources/unverified/businessplaene-top10-lean-saas.md","status":"idea_archive","default_grade":"D","notes":"Ältere Businessplan-Hypothesen; Zahlen nicht ungeprüft übernehmen."},
-    {"path":"sources/unverified/gemini-export-raw.json","status":"provenance_only","default_grade":"D","notes":"Enthält Demonstrations-/zufällig erzeugte Datensätze; für Core-Scoring gesperrt."},
-    {"path":"sources/unverified/gemini-code-prompt-erfolgsfaktoren.md","status":"prompt_archive","default_grade":"D"},
-    {"path":"sources/unverified/erfolgsfaktoren.txt","status":"legacy_archive","default_grade":"D"}
+    {
+      "id": "research-deep-report",
+      "status": "project_source_external_archive",
+      "default_grade": "B",
+      "title": "Lean-Scale Startups im KI- und SaaS-Markt",
+      "notes": "Project research source retained outside the public repository; individual claims must still be verified against original sources."
+    },
+    {
+      "id": "research-startup-success-factors",
+      "status": "project_source_external_archive",
+      "default_grade": "B",
+      "title": "Startup-Erfolgsfaktoren: Lean-Wachstum & KI",
+      "notes": "Project research source retained outside the public repository; older startup metrics can become stale."
+    },
+    {
+      "id": "legacy-idea-archives",
+      "status": "external_archive_unverified",
+      "default_grade": "D",
+      "notes": "Older business-plan, Gemini and generated/demo materials are provenance-only and excluded from core scoring unless independently re-verified."
+    },
+    {
+      "id": "stripe-2025-update",
+      "status": "canonical_external_primary",
+      "default_grade": "A",
+      "url": "https://stripe.com/newsroom/news/stripe-2025-update"
+    },
+    {
+      "id": "langdock-about",
+      "status": "canonical_external_primary",
+      "default_grade": "A",
+      "url": "https://langdock.com/about-us"
+    },
+    {
+      "id": "eu-ai-act-article-50-guidance",
+      "status": "canonical_external_primary",
+      "default_grade": "A",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations"
+    },
+    {
+      "id": "bsi-nis2-registration",
+      "status": "canonical_external_primary",
+      "default_grade": "A",
+      "url": "https://mip2.bsi.bund.de/de/info-nis2-registrierung/"
+    },
+    {
+      "id": "bmf-e-rechnung-faq",
+      "status": "canonical_external_primary",
+      "default_grade": "A",
+      "url": "https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html"
+    }
   ]
 }
