@@ -1,11 +1,81 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updated_at": "2026-08-28",
   "claims": [
-    {"id":"claim-stripe-startup-speed-2025","entity":"Stripe startup cohort 2025","metric_type":"startup_growth_signal","value":"2025 cohort reportedly grew ~50% faster than 2024 cohort","unit":"qualitative_percent_comparison","as_of_date":"2025-12-31","source_url":null,"source_grade":"B","claim_type":"secondary_synthesis","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"},
-    {"id":"claim-langdock-arr-2026-08","entity":"Langdock","metric_type":"ARR","value":50,"unit":"USD_million","as_of_date":"2026-08-01","source_url":null,"source_grade":"A","claim_type":"official_company_claim","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"},
-    {"id":"claim-ai-act-art50-2026-08-02","entity":"EU AI Act Article 50","metric_type":"regulatory_effective_date","value":"Transparency obligations applicable","unit":"status","as_of_date":"2026-08-02","source_url":null,"source_grade":"A","claim_type":"regulatory","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"},
-    {"id":"claim-nis2-de-2025-12-06","entity":"NIS2 Germany","metric_type":"regulatory_status","value":"Implementation law in force; BSI registration/reporting processes active","unit":"status","as_of_date":"2025-12-06","source_url":null,"source_grade":"A","claim_type":"regulatory","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"},
-    {"id":"claim-einvoice-de-2025-01-01","entity":"E-Rechnung Deutschland","metric_type":"regulatory_status","value":"Reception obligation active since 2025-01-01; issuance transition periods continue through 2026/2027","unit":"status","as_of_date":"2025-01-01","source_url":null,"source_grade":"A","claim_type":"regulatory","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"}
+    {
+      "id": "claim-stripe-startup-speed-2025",
+      "entity": "Stripe startup cohort 2025",
+      "metric_type": "startup_growth_signal",
+      "value": "2025 cohort grew around 50% faster than 2024; twice as many companies reached $10M ARR within 3 months; 20% of Atlas startups charged a first customer within 30 days",
+      "unit": "multi_metric_growth_signal",
+      "as_of_date": "2025-12-31",
+      "source_url": "https://stripe.com/newsroom/news/stripe-2025-update",
+      "source_grade": "A",
+      "claim_type": "official_company_claim",
+      "confidence": "high",
+      "last_verified_at": "2026-08-28",
+      "freshness_days": 30,
+      "verification_status": "verified"
+    },
+    {
+      "id": "claim-langdock-arr-2026-08",
+      "entity": "Langdock",
+      "metric_type": "ARR",
+      "value": 50,
+      "unit": "USD_million",
+      "as_of_date": "2026-08-01",
+      "source_url": "https://langdock.com/about-us",
+      "source_grade": "A",
+      "claim_type": "official_company_claim",
+      "confidence": "high",
+      "last_verified_at": "2026-08-28",
+      "freshness_days": 30,
+      "verification_status": "verified"
+    },
+    {
+      "id": "claim-ai-act-art50-2026-08-02",
+      "entity": "EU AI Act Article 50",
+      "metric_type": "regulatory_effective_date",
+      "value": "Transparency obligations apply from 2026-08-02",
+      "unit": "status",
+      "as_of_date": "2026-08-02",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations",
+      "source_grade": "A",
+      "claim_type": "regulatory",
+      "confidence": "high",
+      "last_verified_at": "2026-08-28",
+      "freshness_days": 30,
+      "verification_status": "verified"
+    },
+    {
+      "id": "claim-nis2-de-2025-12-06",
+      "entity": "NIS2 Germany",
+      "metric_type": "regulatory_status",
+      "value": "NIS-2 implementation law in force since 2025-12-06; BSI registration and incident-reporting processes active",
+      "unit": "status",
+      "as_of_date": "2025-12-06",
+      "source_url": "https://mip2.bsi.bund.de/de/info-nis2-registrierung/",
+      "source_grade": "A",
+      "claim_type": "regulatory",
+      "confidence": "high",
+      "last_verified_at": "2026-08-28",
+      "freshness_days": 30,
+      "verification_status": "verified"
+    },
+    {
+      "id": "claim-einvoice-de-2025-01-01",
+      "entity": "E-Rechnung Deutschland",
+      "metric_type": "regulatory_status",
+      "value": "Domestic businesses must be able to receive structured e-invoices since 2025-01-01; general issuance transition runs through 2026 and through 2027 for issuers with prior-year turnover up to EUR 800,000",
+      "unit": "status",
+      "as_of_date": "2026-03-23",
+      "source_url": "https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html",
+      "source_grade": "A",
+      "claim_type": "regulatory",
+      "confidence": "high",
+      "last_verified_at": "2026-08-28",
+      "freshness_days": 30,
+      "verification_status": "verified"
+    }
   ]
 }
