@@ -1,0 +1,45 @@
+name: Monthly Business Radar freshness gate
+
+on:
+  schedule:
+    - cron: '17 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate repository
+        run: python scripts/validate_repo.py
+      - name: Generate due-research report
+        run: python scripts/freshness_check.py --report
+      - name: Commit monthly report when changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add radar/updates/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(radar): monthly freshness report"
+            git push
+          fi
+      - name: Open monthly research issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          MONTH=$(date -u +%Y-%m)
+          TITLE="Business-Radar Research Update — ${MONTH}"
+          if ! gh issue list --state open --search "$TITLE in:title" --json title --jq '.[].title' | grep -Fxq "$TITLE"; then
+            gh issue create \
+              --title "$TITLE" \
+              --body "Freshness-Report wurde unter radar/updates/${MONTH}.md erzeugt. Recherchiere fällige Claims mit aktuellen Primärquellen, aktualisiere Claims/Opportunity Radar/PROJECT_MASTER und dokumentiere Score- oder Prioritätsänderungen im Change Log. Keine neuen Zahlen ohne Quelle."
+          fi

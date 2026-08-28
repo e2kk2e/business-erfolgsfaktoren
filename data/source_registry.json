@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-08-28",
+  "sources": [
+    {"path":"sources/verified/deep-research-report.md","status":"research_basis","default_grade":"B","notes":"Neuere Deep-Research-Synthese; einzelne Claims weiterhin anhand ihrer Originalquelle bewerten."},
+    {"path":"sources/verified/startup-erfolgsfaktoren_lean-wachstum-ki.md","status":"research_basis","default_grade":"B","notes":"Umfangreiche Startup-Analyse; ältere Werte können zeitlich veraltet sein."},
+    {"path":"sources/unverified/20-realistische-businessplaene.md","status":"idea_archive","default_grade":"D","notes":"Ideen-/Scoring-Archiv, keine belastbare Marktevidenz ohne externe Verifikation."},
+    {"path":"sources/unverified/businessplaene-top10-lean-saas.md","status":"idea_archive","default_grade":"D","notes":"Ältere Businessplan-Hypothesen; Zahlen nicht ungeprüft übernehmen."},
+    {"path":"sources/unverified/gemini-export-raw.json","status":"provenance_only","default_grade":"D","notes":"Enthält Demonstrations-/zufällig erzeugte Datensätze; für Core-Scoring gesperrt."},
+    {"path":"sources/unverified/gemini-code-prompt-erfolgsfaktoren.md","status":"prompt_archive","default_grade":"D"},
+    {"path":"sources/unverified/erfolgsfaktoren.txt","status":"legacy_archive","default_grade":"D"}
+  ]
+}

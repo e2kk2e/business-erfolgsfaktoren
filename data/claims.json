@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-08-28",
+  "claims": [
+    {"id":"claim-stripe-startup-speed-2025","entity":"Stripe startup cohort 2025","metric_type":"startup_growth_signal","value":"2025 cohort reportedly grew ~50% faster than 2024 cohort","unit":"qualitative_percent_comparison","as_of_date":"2025-12-31","source_url":null,"source_grade":"B","claim_type":"secondary_synthesis","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"},
+    {"id":"claim-langdock-arr-2026-08","entity":"Langdock","metric_type":"ARR","value":50,"unit":"USD_million","as_of_date":"2026-08-01","source_url":null,"source_grade":"A","claim_type":"official_company_claim","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"},
+    {"id":"claim-ai-act-art50-2026-08-02","entity":"EU AI Act Article 50","metric_type":"regulatory_effective_date","value":"Transparency obligations applicable","unit":"status","as_of_date":"2026-08-02","source_url":null,"source_grade":"A","claim_type":"regulatory","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"},
+    {"id":"claim-nis2-de-2025-12-06","entity":"NIS2 Germany","metric_type":"regulatory_status","value":"Implementation law in force; BSI registration/reporting processes active","unit":"status","as_of_date":"2025-12-06","source_url":null,"source_grade":"A","claim_type":"regulatory","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"},
+    {"id":"claim-einvoice-de-2025-01-01","entity":"E-Rechnung Deutschland","metric_type":"regulatory_status","value":"Reception obligation active since 2025-01-01; issuance transition periods continue through 2026/2027","unit":"status","as_of_date":"2025-01-01","source_url":null,"source_grade":"A","claim_type":"regulatory","confidence":"medium","last_verified_at":"2026-08-28","freshness_days":30,"verification_status":"needs_external_source_url"}
+  ]
+}

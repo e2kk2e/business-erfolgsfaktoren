@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-08-28",
+  "active_build_limit": 1,
+  "primary": {
+    "name": "Elektro-LV Autoquote",
+    "status": "VALIDATE_NOW",
+    "opportunity_score": 88,
+    "evidence_score": null,
+    "decision_gate": "No full build before paid evidence",
+    "target_customer": "Elektrohandwerksbetriebe in Deutschland mit ca. 5-50 Mitarbeitenden",
+    "next_test": "14-day paid validation"
+  },
+  "watchlist": [
+    {"name":"KryptoEvidence MSP","status":"VALIDATE","notes":"Stärkerer Moat, aber höhere Security-/Compliance- und Vertriebsfriktion."},
+    {"name":"Ausschreibungs-Intelligence / DaaS","status":"RESEARCH_VALIDATE","notes":"Datenzugang, Quellenrechte, Matching-Qualität und Käuferbudget zuerst belegen."}
+  ],
+  "catalysts": ["EU AI Act transparency obligations","NIS2 Germany implementation","German e-invoicing transition","AI-native self-service workflow adoption"]
+}

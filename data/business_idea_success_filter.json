@@ -1,0 +1,74 @@
+{
+  "document_type": "lean_saas_intelligence_scoring_standard",
+  "version": "2.1.0",
+  "updated_at": "2026-08-28",
+  "language": "de",
+  "purpose": "Evidenzgesteuerte Priorisierung und Validierung von DACH KI-SaaS-, Micro-SaaS-, Developer-Tool-, DaaS- und Automatisierungs-Ideen.",
+  "source_policy": {
+    "grades": {
+      "A": "Primär/amtlich/offizielle Unternehmensmetrik/Standard",
+      "B": "Starke Sekundärquelle mit nachvollziehbarer Herkunft",
+      "C": "Founder-Claim, Directory, Schätzung oder schwache Sekundärquelle",
+      "D": "Demo, generiert, zufällig erzeugt, unprüfbar"
+    },
+    "eligible_for_core_scoring": ["A", "B", "C"],
+    "excluded_from_core_scoring": ["D"],
+    "claim_fields_required": ["entity", "metric_type", "value", "unit", "as_of_date", "source_url", "source_grade", "claim_type", "confidence", "last_verified_at"],
+    "metric_separation_required": ["arr", "revenue", "profit", "users", "customers", "traffic", "funding"]
+  },
+  "freshness_policy_days": {
+    "startup_growth_metrics": 90,
+    "regulation_status": 30,
+    "pricing_and_product_features": 60,
+    "market_size_stats": 365,
+    "standards": 180
+  },
+  "hard_filters": [
+    {"id":"HF01","key":"unclear_target_group","critical":true},
+    {"id":"HF02","key":"no_acute_pain","critical":true},
+    {"id":"HF03","key":"no_budget_owner","critical":true},
+    {"id":"HF04","key":"no_recurring_use","critical":false},
+    {"id":"HF05","key":"no_measurable_roi","critical":true},
+    {"id":"HF06","key":"mvp_not_fast_testable","critical":true,"max_days":21},
+    {"id":"HF07","key":"sales_cycle_too_long","critical":false,"max_days":90},
+    {"id":"HF08","key":"gross_margin_too_low","critical":false,"min_percent":70},
+    {"id":"HF09","key":"too_much_manual_service","critical":false,"max_percent":20},
+    {"id":"HF10","key":"no_reachable_distribution","critical":true},
+    {"id":"HF11","key":"platform_or_tos_risk_as_core","critical":false},
+    {"id":"HF12","key":"no_differentiation","critical":false},
+    {"id":"HF13","key":"uncontrolled_legal_or_privacy_risk","critical":true}
+  ],
+  "opportunity_score": {
+    "max":100,
+    "variables":[
+      {"key":"icp_specificity","weight":6},{"key":"target_reachability","weight":6},{"key":"buyer_budget","weight":5},{"key":"dach_relevance","weight":3},{"key":"pain_intensity","weight":8},{"key":"usage_frequency","weight":5},{"key":"bad_current_workaround","weight":5},{"key":"measurable_roi","weight":8},{"key":"urgency","weight":4},{"key":"time_to_value","weight":6},{"key":"mvp_api_fit","weight":6},{"key":"data_access","weight":4},{"key":"output_quality","weight":4},{"key":"plg_self_serve","weight":6},{"key":"distribution_leverage","weight":6},{"key":"workflow_lock_in","weight":5},{"key":"pricing_model","weight":3},{"key":"automation_degree","weight":4},{"key":"differentiation","weight":3},{"key":"risk_low","weight":3}
+    ]
+  },
+  "evidence_score": {
+    "max":100,
+    "variables":[{"key":"customer_interviews","weight":30},{"key":"willingness_to_pay","weight":25},{"key":"competitor_or_alternative_spend","weight":20},{"key":"search_or_community_demand","weight":15},{"key":"manual_workaround_proof","weight":10}],
+    "gates":{"research_only_below":30,"paid_mvp_min":30,"full_build_min":50}
+  },
+  "founder_execution_fit": {
+    "max":100,
+    "variables":[{"key":"domain_understanding","weight":25},{"key":"buyer_access","weight":20},{"key":"technical_build_fit","weight":20},{"key":"credibility_trust","weight":15},{"key":"support_operating_fit","weight":10},{"key":"capital_fit","weight":10}]
+  },
+  "catalyst_score": {
+    "max":100,
+    "variables":[{"key":"regulation_deadline","weight":25},{"key":"technology_readiness","weight":25},{"key":"cost_margin_pressure","weight":20},{"key":"platform_data_shift","weight":15},{"key":"competitive_window","weight":15}]
+  },
+  "priority_formula": "0.45*opportunity_score + 0.25*evidence_score + 0.15*founder_execution_fit + 0.15*catalyst_score",
+  "decision_rules":[
+    {"decision":"REJECT","if":"any critical hard filter == true"},
+    {"decision":"PIVOT_REQUIRED","if":"any noncritical hard filter == true and no critical hard filter"},
+    {"decision":"RESEARCH_ONLY","if":"evidence_score < 30"},
+    {"decision":"PAID_MVP","if":"opportunity_score >= 75 and evidence_score >= 30 and no hard-filter block"},
+    {"decision":"BUILD","if":"opportunity_score >= 75 and evidence_score >= 50 and no hard-filter block"},
+    {"decision":"TOP_PRIORITY","if":"opportunity_score >= 85 and evidence_score >= 50 and founder_execution_fit >= 70 and catalyst_score >= 60 and no hard-filter block"}
+  ],
+  "validation_gates": {
+    "before_full_build":["mindestens 10 relevante Kundengespräche","belegter wiederkehrender manueller Workaround","messbare ROI-Hypothese an realen Daten getestet","mindestens 2 verbindlich zahlende Piloten oder gleichwertiger Zahlungsbeweis","ein getesteter Akquisekanal","keine kritischen Hard Filter"]
+  },
+  "portfolio_rule":"Genau ein aktives Build-Projekt gleichzeitig; alle anderen Ideen bleiben Research/Watchlist.",
+  "current_primary_candidate":{"name":"Elektro-LV Autoquote","status":"VALIDATE_NOW","existing_opportunity_score":88,"note":"Bestehender modellbasierter Score aus Projekt-Report; kein Nachfragebeweis. Evidence Score muss real erhoben werden."}
+}
